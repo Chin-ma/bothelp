@@ -1,0 +1,26 @@
+@media only screen and (max-width: 400px) {
+    .hamburger {
+        display: block;
+        position: relative;
+        left: 1400px;
+        top: -50px;
+    }
+    .link-list {
+        display: none;
+    }
+    .side-list {
+        display: block;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 1920px) {
+    .hamburger {
+        display: none;
+    }
+    .link-list {
+        display: block;
+    }
+    .side-list {
+        display: none;
+    }
+}

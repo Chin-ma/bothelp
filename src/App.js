@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect, useRef } from 'react';
 import { Form, Input, TextArea, Button, Icon } from 'semantic-ui-react';
 import ScrollAnimation from 'react-animate-on-scroll';
@@ -6,7 +7,8 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
 import EmailValidator from 'email-validator';
 import 'semantic-ui-css/semantic.min.css';
 import emailjs from 'emailjs-com';
-import '@sweetalert2/themes/dark';
+import '@sweetalert2/themes/default';
+import './styles/Responsive.css';
 import './styles/App.css';
 import 'animate.css';
 
@@ -15,7 +17,7 @@ export default function App() {
        const TEMPLATE_ID = "template_2d12218";
        const USER_ID = "user_yjzIcgP3CielUVbDJdRCL";
        const [showText, setShowText] = useState(false);
-       // const click = () => setShowText(true); 
+       // const click = () => setShowText(true);
        function click() {
         setShowText(true);
         setTimeout(function() {
@@ -44,6 +46,7 @@ export default function App() {
        const override = `position: relative;
                          display: flex;
                          align-items: center;
+
                          justify-content: center;
                          background-color: #23272A;
                          height: 1000px;
@@ -78,6 +81,11 @@ export default function App() {
        const [emailInput, setEmail] = useState("");
        const [validEmail, validateEmail] = useState(true);
 
+       const [showNav, setShowNav] = useState(false);
+       function reveal() {
+        setShowNav(true);
+       }
+
        return(
         isLoading ?
         <ScaleLoader color={'#FF9900'} isLoading={isLoading} css={override} size={200} />:
@@ -98,10 +106,34 @@ export default function App() {
                             <a href="#summon">Summon</a>
                             <a href="#song-q">Queue shuffle</a>
                             <a href="#song-loop">Loops song</a>
-                        </div>
+                         </div>
                         :null
                     }
                 </ul>
+                {
+                    showNav ?
+                        <ul className="side-list">
+                            <li className="links"><a href="/App.js">Home</a></li>
+                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                            <li className="links"><a href="#" onClick={click}>Features</a></li>
+                            <li className="links"><a href="#a-us">About us</a></li>
+                            <li className="links"><a href="#contact-us">Contact us</a></li>
+                            {
+                                showText ?
+                                <div className="dropContent">
+                                    <a href="#summon">Summon</a>
+                                    <a href="#song-q">Queue shuffle</a>
+                                    <a href="#song-loop">Loops song</a>
+                                </div>
+                                :null
+                            }
+                        </ul>
+                    :null
+                }
+                
+            </div>
+            <div className="hamburger">
+                <Icon link name="bars" color="orange" className="ham" id="collapse" size="big" onClick={reveal}></Icon>
             </div>
         </header>
 
@@ -208,6 +240,7 @@ export default function App() {
                 </Form>
             </div>
 
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a className="f1" id="a-us">About Us</a>
             <div className="about-us">
                 <div className="about-lay" id="myself">
@@ -220,7 +253,7 @@ export default function App() {
                 <div className="about-lay" id="mate">
                     <img src="mate.png" alt="" className="mate-pic" />
                     <span className="mate-name">Pranil Chitre</span>
-                    <a onClick={() => window.open("https://github.com/awesssome-pro", "_blank")}><Icon link name="github icon" size="big" color="blue" id="mate-git"></Icon></a>
+                    <a onClick={() => window.open("https://github.com/devout-coder", "_blank")}><Icon link name="github icon" size="big" color="blue" id="mate-git"></Icon></a>
                     <a onClick={() => window.open("https://stackoverflow.com/users/14502224/pranil", "_blank")}><Icon link name="stack overflow" size="big" color="orange" id="mate-stack"></Icon></a>
                     <a onClick={() => window.open("https://www.instagram.com/devout_coder/", "_blank")}><Icon link name="instagram" size="big" color="pink" id="mate-insta"></Icon></a>
                 </div>
