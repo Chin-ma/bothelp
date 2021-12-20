@@ -1,26 +1,743 @@
-@media only screen and (max-width: 400px) {
-    .hamburger {
-        display: block;
-        position: relative;
-        left: 1400px;
-        top: -50px;
-    }
-    .link-list {
-        display: none;
-    }
-    .side-list {
-        display: block;
-    }
-}
+@media (min-width: 300px) and (max-width: 425px) {
+    .background {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            display: block;
+            height: max-content;
+            background-color: #23272A;
+            overflow: hidden;
+            scroll-behavior: smooth;
+        }
 
-@media (min-width: 401px) and (max-width: 1920px) {
-    .hamburger {
-        display: none;
-    }
-    .link-list {
-        display: block;
-    }
-    .side-list {
-        display: none;
-    }
+        * {
+            scroll-behavior: smooth;
+        }   
+
+        .navbar {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .logo img {
+            display: block;
+            flex-direction: row;
+            position: relative;
+            top: 10px;
+            left: 5px;
+            margin: 5px;
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            box-shadow: 0 0 30px #FF9900;
+        }
+
+        .logo-text {
+            position: relative;
+            top: 25px;
+            left: 5px;
+            margin: 5px;
+            font-family: Alfa Slab One;
+            font-size: 23px;
+            color: #FF9900;
+        }
+
+        .dropContent {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            height: 0;
+            width: 0;
+        }
+
+        .dropContent a {
+            position: relative;
+            top: 25px;
+            /*right: 324px;*/
+            margin: none;
+            padding: 0;
+            text-decoration: none;
+            color: white;
+            font-family: sans-serif;
+            font-size: 15px;
+            transition: 0.2s ease-in-out;
+            width: 150px;
+            padding: 2px;
+        }
+
+        .dropContent a:hover {
+            color: gray;
+        }
+
+        .f1 {
+            font-family: sans-serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            top: -130px;
+            left: 130px;
+            display: fixed; 
+            text-decoration: none;
+            z-index: 1;
+            animation: fadeIn linear 2s;
+          -webkit-animation: fadeIn linear 2s;
+          -moz-animation: fadeIn linear 2s;
+          -o-animation: fadeIn linear 2s;
+          -ms-animation: fadeIn linear 2s
+        }
+
+        .f1:hover {
+            color: white;
+            cursor: none;
+        }
+
+        @keyframes fadeIn {
+          0% {opacity:0;}
+          100% {opacity:1;}
+        }
+
+        @-moz-keyframes fadeIn {
+          0% {opacity:0;}
+          100% {opacity:1;}
+        }
+
+        @-webkit-keyframes fadeIn {
+          0% {opacity:0;}
+          100% {opacity:1;}
+        }
+
+        @-o-keyframes fadeIn {
+          0% {opacity:0;}
+          100% {opacity:1;}
+        }
+
+        @-ms-keyframes fadeIn {
+          0% {opacity:0;}
+          100% {opacity:1;}
+        }
+
+        #song-q {
+            top: -280px;
+            left: 105px;
+        }
+
+        #song-loop {
+            top: -410px;
+            left: 120px;
+        }
+
+        .logo-loop {
+            position: relative;
+            float: right;
+            width: 200px;
+            height: 200px;
+            top: -1270px;
+            left: -170px;
+            border-radius: 100%;
+            animation: flicker 2s linear infinite;
+            display: none;
+        }
+
+        .l-text {
+            position: relative;
+            top: -1100px;
+            left: 100px;
+            color: white;
+            font-family: sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            text-align: center;
+            width: fit-content;
+            height: fit-content;
+            line-height: 33px;
+            animation: fadeIn linear 2s;
+          -webkit-animation: fadeIn linear 2s;
+          -moz-animation: fadeIn linear 2s;
+          -o-animation: fadeIn linear 2s;
+          -ms-animation: fadeIn linear 2s;
+          display: none;
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 1;
+                box-shadow: 0 0 100px #FF9900;
+            }
+            10% {
+                opacity: 0;
+            }
+            20%,30% {
+                opacity: 1;
+                box-shadow: 0 0 80px white;
+            }
+            40%,50% {
+                opacity: 0;
+            }
+            60% {
+                opacity: 1;
+                box-shadow: 0 0 50px white;
+            }
+            70% {
+                opacity: 0;
+            }
+            80%,90% {
+                opacity: 1;
+                box-shadow: 0 0 100px white;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        #vid {
+            position: relative;
+            left: 0px;
+            /* border: 2px solid white;
+            border-radius: 20px; */
+            border: none;
+            width: 360px;
+            height: 300px;
+            animation: fadeIn linear 2s;
+          -webkit-animation: fadeIn linear 2s;
+          -moz-animation: fadeIn linear 2s;
+          -o-animation: fadeIn linear 2s;
+          -ms-animation: fadeIn linear 2s
+        }
+
+        .vid1 {
+            top: -210px;
+        }
+
+        .vid2 {
+            top: -350px;
+        }
+
+        .vid3 {
+            position: relative;
+            left: 0px;
+            /* border: 2px solid white;
+            border-radius: 20px; */
+            border: none;
+            width: 360px;
+            height: 300px;
+            top: -495px;
+        }
+
+        .summon-text {
+            position: relative;
+            top: -420px;
+            left: 80px;
+            color: white;
+            font-family: sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            width: fit-content;
+            height: fit-content;
+            line-height: 23px;
+            animation: fadeIn linear 2s;
+          -webkit-animation: fadeIn linear 2s;
+          -moz-animation: fadeIn linear 2s;
+          -o-animation: fadeIn linear 2s;
+          -ms-animation: fadeIn linear 2s;
+          display: none;
+        }
+
+        .summon-image {
+            position: relative;
+            width: 342px;
+            height: 28px;
+            left: 1500px;
+            top: -750px;
+            border-radius: 70%;
+            box-shadow: 0 -50px 120px white;
+            background-color: white;
+        }
+
+        .logo-summon {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            left: -170px;
+            top: -50px;
+            bottom: 0;
+            border-radius: 100%;
+            box-shadow: 0 0 100px white;
+            animation: MoveUpDown 3s linear infinite;                                                                                                                                               
+            float: right;
+            display: none;
+        }
+
+        @keyframes MoveUpDown {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        .q-text {
+            position: relative;
+            top: -850px;
+            left: 1550px;
+            color: white;
+            font-family: sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            text-align: center;
+            width: fit-content;
+            height: fit-content;
+            line-height: 33px;
+            animation: fadeIn linear 2s;
+          -webkit-animation: fadeIn linear 2s;
+          -moz-animation: fadeIn linear 2s;
+          -o-animation: fadeIn linear 2s;
+          -ms-animation: fadeIn linear 2s;
+          display: none;
+        }
+
+        .logo-q {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100px;
+            height: 100px;
+            line-height: 10px;
+            top: -1100px;
+            left: 200px;
+            border-radius: 100%;
+            display: none;
+        }
+
+        #logo-q1 {
+            animation: fadeInOut 2s linear infinite;    
+            box-shadow: 0 0 100px white;
+        }
+
+        #logo-q2 {
+            animation: fadeInOut 2.5s linear infinite;
+            box-shadow: 0 0 100px white;
+        }
+
+        #logo-q3 {
+            animation: fadeInOut 3s linear infinite;
+            box-shadow: 0 0 100px white;
+        }
+
+        @keyframes fadeInOut {
+            0%,100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .some-text {
+            font-family: sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+            top: 25px;
+            right: 0;
+            left: 7px;
+            bottom: 0;
+            margin: auto;
+            width: fit-content;
+            height: fit-content;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+        }
+
+        #contact-us {
+            top: -570px;
+        }
+
+        .func-btns {
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            position: relative;
+            width: 120px;
+            height: 30px;
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 19px;
+            line-height: 17px;
+            background-color: #FF9900;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s ease-out;
+            top: 45px;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        #add-discord {
+            left: 50px;
+            z-index: 1;
+        }
+
+        #add-discord:hover {
+            border: 2px solid #23272A;
+            background-color: #B86E00;
+            color: #23272A;
+        }
+
+        #see-features {
+            left: 80px;
+            z-index: 1;
+        }
+
+        #see-features:hover {
+            border: 2px solid #23272A;
+            background-color: #B86E00;
+            color: #23272A;
+        }
+
+        #img1 img {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            top: -250px;
+            left: 80px;
+            border: none;
+            opacity: 40%;
+        }
+
+        #img2 img {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            top: -250px;
+            left: 220px;
+            border: none;
+            opacity: 40%;
+        }
+
+        #img3 img {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            top: -300px;
+            left: 60px;
+            border: none;
+            opacity: 40%;
+        }
+
+        .images {
+            position: relative;
+            top: 150px;
+        }
+
+        .force-add {
+            display: block;
+            position: relative;
+            top: -150px;
+            height: 80px;
+            background-color: #2C2F33;
+        }
+
+        .sc-1 img {
+            position: relative;
+            top: 178px;
+            left: 98px;
+            width: 300px;
+            height: 300px;
+        }
+
+        .sc-1 {
+            display: none;
+        }
+
+        .force-text {
+            position: relative;
+            font-family: sans-serif;
+            font-weight: bold;
+            color: white;
+            font-size: 15px;
+            top: 15px;
+            left: 40px;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        #add-discord-2 {
+            top: 5px;
+            left: 80px;
+        }
+
+        #add-discord-2:hover {
+            border: 2px solid #23272A;
+            background-color: #B86E00;
+            color: #23272A;
+        }
+
+        .dev-info {
+            position: relative;
+            top: -150px;
+            height: 350px;
+            width: 100%;
+            background-color: #2C2F33;
+        }
+
+        #about-logo {
+            position: relative;
+            top: 20px;
+            left: 130px;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            box-shadow: 0 0 80px #FF9900;
+        }
+
+        #about-logo-text {
+            position: relative;
+            top: 30px;
+            left: 90px;
+        }
+
+        .dev-links {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            top: 50px;
+            right: 0;
+            left: 100px;
+            bottom: 0;
+            margin: auto;
+            line-height: 30px;
+        }
+
+        .dev-links a {
+            text-decoration: none;
+            color: white;
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: 300;
+            transition: 0.2s ease-out;
+            width: fit-content;
+            height: fit-content;
+        }
+
+        .dev-links a:hover {
+            color: gray;
+        }
+
+        #dev2 {
+            position: relative;
+            left: 200px;
+            top: -90px;
+        }
+
+        .contact-form {
+            position: relative;
+            left: 5px;
+            top: -550px;
+            width: 350px;
+            height: 250px;
+        }
+
+        #form-textarea-control-opinion {
+            resize: none;
+            width: 100%;
+            height: 200px;
+            font-size: 15px;
+            position: relative;
+            top: 0px;
+            font-family: sans-serif;
+        }
+
+        #form-textarea-control-opinion:focus {
+            box-shadow: 0 0 50px #B86E00;
+        }
+
+        #form-input-control-last-name {
+            width: 100%;
+            height: 30px;
+            font-size: 15px;
+            position: relative;
+            top: 0px;
+            font-family: sans-serif;
+        }
+
+        #form-input-control-last-name:focus {
+            box-shadow: 0 0 50px #B86E00;
+        }
+
+        #form-input-control-email {
+            width: 100%;
+            height: 30px;
+            font-size: 15px;
+            position: relative;
+            font-family: sans-serif;
+        }
+
+        #form-input-control-email:focus {
+            box-shadow: 0 0 50px #B86E00;
+        }
+
+        #form-control-button {
+            position: relative;
+            width: 100px;
+            font-size: 12px;
+            font-family: sans-serif;
+            padding: 10px;
+            z-index: 99;
+        }
+
+        .go-up {
+           top: 290px;
+           bottom:0;
+           left: 320px;
+           position:fixed;
+           overflow-y:scroll;
+           overflow-x:hidden;
+        }
+
+        .about-us {
+            position: relative;
+            left: 0px;
+            top: 70px;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            width: 100%;
+        }
+
+        .my-pic {
+            position: relative;
+            left: 130px;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+        }
+
+        .mate-pic {
+            position: relative;
+            top: 70px;
+            left: -130px;
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            float: right;
+        }
+
+        .my-name {
+            position: relative;
+            left: -20px;
+            top: 30px;
+            font-family: sans-serif;
+            font-size: 20px;
+            color: white;
+        }
+
+        .mate-name {
+            position: relative;
+            left: 130px;
+            top: 185px;
+            font-family: sans-serif;
+            font-size: 20px;
+            color: white;
+        }
+
+        #my-git {
+            position: relative;
+            left: -200px;
+            top: 60px;
+            text-decoration: none;
+            text-shadow: 0 0 15px blue;
+        }
+
+        #mate-git {
+            position: relative;
+            left: 10px;
+            top: 215px;
+            text-decoration: none;
+            text-shadow: 0 0 15px blue;
+        }
+
+        #my-stack {
+            position: relative;
+            left: 165px;
+            top: 30px;
+            text-decoration: none;
+            text-shadow: 0 0 15px orange;
+        }
+
+        #mate-stack {
+            position: relative;
+            left: 20px;
+            top: 215px;
+            text-decoration: none;
+            text-shadow: 0 0 15px orange;
+        }
+
+        #my-insta {
+            position: relative;
+            left: 175px;
+            top: 30px;
+            text-decoration: none;
+            text-shadow: 0 0 15px pink;
+        }
+
+        #mate-insta {
+            position: relative;
+            left: 30px;
+            top: 215px;
+            text-decoration: none;
+            text-shadow: 0 0 10px pink;
+        }
+
+        #a-us {
+            top: 60px;
+        }
+
+        .about {
+            position: relative;
+            top: -500px;
+        }
+        .side-list {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #2C2F33;
+            width: 100%;
+            top: -50px;
+        }
+        .side-list li {
+            list-style: none;
+        }
+        .links1 a {
+            position: relative;
+            left: -10px;
+            font-family: sans-serif;
+            font-size: 15px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #FF9900;
+            transition: 0.2s ease-in-out;
+        }
+        .links1 a:hover {
+            color: #B86E00;
+        }
+        .ham {
+            position: relative;
+            top: -83px;
+            right: 10px;
+            float: right;
+            visibility: inherit;
+        }
+        .link-list {
+            visibility: hidden;
+        }
 }

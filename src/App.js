@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect, useRef } from 'react';
 import { Form, Input, TextArea, Button, Icon } from 'semantic-ui-react';
-import ScrollAnimation from 'react-animate-on-scroll';
 import ScaleLoader from 'react-spinners/ScaleLoader';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import EmailValidator from 'email-validator';
@@ -82,9 +81,6 @@ export default function App() {
        const [validEmail, validateEmail] = useState(true);
 
        const [showNav, setShowNav] = useState(false);
-       function reveal() {
-        setShowNav(true);
-       }
 
        return(
         isLoading ?
@@ -110,30 +106,16 @@ export default function App() {
                         :null
                     }
                 </ul>
-                {
-                    showNav ?
-                        <ul className="side-list">
-                            <li className="links"><a href="/App.js">Home</a></li>
-                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <li className="links"><a href="#" onClick={click}>Features</a></li>
-                            <li className="links"><a href="#a-us">About us</a></li>
-                            <li className="links"><a href="#contact-us">Contact us</a></li>
-                            {
-                                showText ?
-                                <div className="dropContent">
-                                    <a href="#summon">Summon</a>
-                                    <a href="#song-q">Queue shuffle</a>
-                                    <a href="#song-loop">Loops song</a>
-                                </div>
-                                :null
-                            }
-                        </ul>
-                    :null
-                }
                 
             </div>
             <div className="hamburger">
-                <Icon link name="bars" color="orange" className="ham" id="collapse" size="big" onClick={reveal}></Icon>
+                <Icon link name="bars" color="orange" className="ham" id="collapse" size="big" onClick={() => setShowNav(!showNav)}>{showNav ? '' : ''}</Icon>
+                {showNav && <div><ul className="side-list">
+                            <li className="links1"><a href="/App.js">Home</a></li>
+                            <li className="links1"><a href="#summon">Features</a></li>
+                            <li className="links1"><a href="#a-us">About us</a></li>
+                            <li className="links1"><a href="#contact-us">Contact us</a></li>
+                        </ul></div>}
             </div>
         </header>
 
@@ -161,36 +143,28 @@ export default function App() {
                 <span className="force-text">24/7 Online. Add songs to queue and relax. <button className="func-btns" id="add-discord-2" onClick={() => window.open("https://discordapp.com/api/oauth2/authorize?client_id=705684970466967572&permissions=1312152647&scope=bot", "popup", "width=600,height=600,top=200,left=650")}>Add to discord</button></span>
             </div>
 
+            <a className="f1" id="summon">Summon</a><br></br>
+            <video src="summon.mp4" type="video/mp4" loop={true} autoPlay={true} playsInline muted id="vid" className="vid1" ref={videoRef} onCanPlay={setPlayBack}></video>
+            <div className="summon-text">
+                Hurry!<br></br> use summon<br></br> command and bot will<br></br> join the respective<br></br> channel.
+            </div> 
+            <img src="logo.png" alt="" className="logo-summon" />
+            
+            <a className="f1" id="song-q">Queue Shuffle</a><br></br>
+            <video src="shuffle.mp4" type="video/mp4" loop={true} autoPlay={true} playsInline muted id="vid" className="vid2" ref={videoRef} onCanPlay={setPlayBack}></video>
+            <div className="q-text">
+                Add<br></br> songs to queue<br></br> and shuffle them<br></br> to enjoy the<br></br> variety.
+            </div>
+            <img src="logo.png" alt="" className="logo-q" id="logo-q1" />
+            <img src="logo.png" alt="" className="logo-q" id="logo-q2" />
+            <img src="logo.png" alt="" className="logo-q" id="logo-q3" />
 
-            <ScrollAnimation animateIn="fadeIn">
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="f1" id="summon">Summon</a><br></br>
-                <video src="summon.mp4" type="video/mp4" loop={true} autoPlay={true} id="vid" className="vid1" ref={videoRef} onCanPlay={setPlayBack}></video>
-                <div className="summon-text">
-                    Hurry!<br></br> use summon<br></br> command and bot will<br></br> join the respective<br></br> channel.
-                </div> 
-                <img src="logo.png" alt="" className="logo-summon" />
-            </ScrollAnimation>
-
-            <ScrollAnimation animateIn="fadeIn">
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="f1" id="song-q">Queue Shuffle</a><br></br>
-                <video src="shuffle.mp4" type="video/mp4" loop={true} autoPlay={true} id="vid" className="vid2" ref={videoRef} onCanPlay={setPlayBack}></video>
-                <div className="q-text">
-                    Add<br></br> songs to queue<br></br> and shuffle them<br></br> to enjoy the<br></br> variety.
-                </div>
-                <img src="logo.png" alt="" className="logo-q" id="logo-q1" />
-                <img src="logo.png" alt="" className="logo-q" id="logo-q2" />
-                <img src="logo.png" alt="" className="logo-q" id="logo-q3" />
-
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="f1" id="song-loop">Loops Song</a>
-                <img src="logo.png" alt="" className="logo-loop" />
-            </ScrollAnimation>
-
-            {/* <ScrollAnimation animateIn="fadeIn">
-                
-            </ScrollAnimation> */}
+            <a className="f1" id="song-loop">Loops Song</a>
+            <video src="loop.mp4" type="video/mp4" loop={true} autoPlay={true} playsInline muted className="vid3" ref={videoRef} onCanPlay={setPlayBack}></video>
+            <div className="l-text">
+                Love listening<br></br> to specific Song a lot<br></br> then looooop your song<br></br> with loop command. 
+            </div>
+            <img src="logo.png" alt="" className="logo-loop" />
 
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a className="f1" id="contact-us">Contact Us</a>
@@ -240,24 +214,26 @@ export default function App() {
                 </Form>
             </div>
 
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-            <a className="f1" id="a-us">About Us</a>
-            <div className="about-us">
-                <div className="about-lay" id="myself">
-                    <img src="myself.png" alt="" className="my-pic" />
-                    <span className="my-name">Chinmay Phanasgaonkar</span>
-                    <a onClick={() => window.open("https://github.com/Chin-ma", "_blank")}><Icon link name="github icon" size="big" color="blue" id="my-git"></Icon></a>
-                    <a onClick={() => window.open("https://stackoverflow.com/users/12539063/chinmay-phanasgaonkar", "_blank")}><Icon link name="stack overflow" size="big" color="orange" id="my-stack"></Icon></a>
-                    <a onClick={() => window.open("https://www.instagram.com/__chinmay__.py/", "_blank")}><Icon link name="instagram" size="big" color="pink" id="my-insta"></Icon></a>
-                </div>
-                <div className="about-lay" id="mate">
-                    <img src="mate.png" alt="" className="mate-pic" />
-                    <span className="mate-name">Pranil Chitre</span>
-                    <a onClick={() => window.open("https://github.com/devout-coder", "_blank")}><Icon link name="github icon" size="big" color="blue" id="mate-git"></Icon></a>
-                    <a onClick={() => window.open("https://stackoverflow.com/users/14502224/pranil", "_blank")}><Icon link name="stack overflow" size="big" color="orange" id="mate-stack"></Icon></a>
-                    <a onClick={() => window.open("https://www.instagram.com/devout_coder/", "_blank")}><Icon link name="instagram" size="big" color="pink" id="mate-insta"></Icon></a>
+            <div className="about">
+                <a className="f1" id="a-us">About Us</a>
+                <div className="about-us">
+                    <div className="about-lay" id="myself">
+                        <img src="myself.png" alt="" className="my-pic" />
+                        <span className="my-name">Chinmay Phanasgaonkar</span>
+                        <a onClick={() => window.open("https://github.com/Chin-ma", "_blank")}><Icon link name="github icon" size="big" color="blue" id="my-git"></Icon></a>
+                        <a onClick={() => window.open("https://stackoverflow.com/users/12539063/chinmay-phanasgaonkar", "_blank")}><Icon link name="stack overflow" size="big" color="orange" id="my-stack"></Icon></a>
+                        <a onClick={() => window.open("https://www.instagram.com/__chinmay__.py/", "_blank")}><Icon link name="instagram" size="big" color="pink" id="my-insta"></Icon></a>
+                    </div>
+                    <div className="about-lay" id="mate">
+                        <img src="mate.png" alt="" className="mate-pic" />
+                        <span className="mate-name">Pranil Chitre</span>
+                        <a onClick={() => window.open("https://github.com/devout-coder", "_blank")}><Icon link name="github icon" size="big" color="blue" id="mate-git"></Icon></a>
+                        <a onClick={() => window.open("https://stackoverflow.com/users/14502224/pranil", "_blank")}><Icon link name="stack overflow" size="big" color="orange" id="mate-stack"></Icon></a>
+                        <a onClick={() => window.open("https://www.instagram.com/devout_coder/", "_blank")}><Icon link name="instagram" size="big" color="pink" id="mate-insta"></Icon></a>
+                    </div>
                 </div>
             </div>
+            
             
         </article>
             
@@ -289,3 +265,24 @@ export default function App() {
 
 }
 
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAQUmazeVXQUSd83xtf8ITPZxk_H5Qxz-Y",
+//   authDomain: "awesome-bot-bb27d.firebaseapp.com",
+//   projectId: "awesome-bot-bb27d",
+//   storageBucket: "awesome-bot-bb27d.appspot.com",
+//   messagingSenderId: "499521787496",
+//   appId: "1:499521787496:web:9b1bfdad0aa4f396bc0ddd",
+//   measurementId: "G-B0SGPYFSPZ"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);

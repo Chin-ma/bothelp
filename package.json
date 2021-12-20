@@ -11,6 +11,7 @@
     "animate.css": "^4.1.1",
     "email-validator": "^2.0.4",
     "emailjs-com": "^3.2.0",
+    "firebase": "^9.6.1",
     "lord-icon-element": "^2.1.0",
     "lottie-web": "^5.7.13",
     "postcss": "^8.3.6",
